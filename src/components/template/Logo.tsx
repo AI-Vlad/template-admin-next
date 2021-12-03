@@ -1,3 +1,4 @@
+import horizonLogo from '../../../public/logo-horizon.jpeg'
 export default function Logo() {
     return (
         <div className={`
@@ -12,6 +13,7 @@ export default function Logo() {
             <div className={`mb-2   flex
         flex-col   justify-center
         items-center`}>
+                {/* <img src={horizonLogo.src} alt="" /> */}
                 <div className={`triangulo-para-cima`}></div>
                 <div className={`flex`}>
 
