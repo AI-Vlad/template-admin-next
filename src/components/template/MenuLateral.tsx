@@ -1,10 +1,13 @@
-import { BellIcon, HomeIcon, SettingsIcon } from "../icons";
+import { BellIcon, HomeIcon, LogoutIcon, SettingsIcon } from "../icons";
 import Logo from "./Logo";
 import MenuItem from "./MenuItem";
 
 export default function MenuLateral(props) {
     return (
-        <aside>
+        <aside className={`flex flex-col 
+        bg-gray-200 text-gray-700
+        dark:bg-gray-900 
+        `}>
             <div className={`
             flex
             flex-col
@@ -15,10 +18,21 @@ export default function MenuLateral(props) {
             `}>
                 <Logo />
             </div>
-            <ul>
+            <ul className={`flex flex-col flex-grow`}>
                 <MenuItem url="/" texto="Inicio" icon={HomeIcon} />
                 <MenuItem url="/ajustes" texto="Configurações" icon={SettingsIcon} />
                 <MenuItem url="/notificacoes" texto="Novidades" icon={BellIcon} />
+            </ul>
+            <ul className={`flex flex-col`}>
+                <MenuItem onClick={() => console.log("logout")}
+                    url="/" texto="Sair"
+                    icon={LogoutIcon}
+                    className={`
+                text-red-600 dark:text-red-400
+                hover:bg-red-400 hover:text-white
+                dark:hover-text-red-400
+                `}
+                />
             </ul>
         </aside>
     )

@@ -1,3 +1,5 @@
+import useAppData from "../../data/context/hook/useAppData";
+import Botao from "./Botao";
 import Cabecalho from "./Cabecalho";
 import Conteudo from "./Conteudo";
 import MenuLateral from "./MenuLateral";
@@ -9,12 +11,16 @@ interface LayoutProps {
 }
 
 export default function Layout(props: LayoutProps) {
+
+    const { tema, alternarTema } = useAppData()
+
     return (
         <div className={`
+        ${tema}
         flex
         h-screen
         w-screen
-        `}>
+               `}>
             <MenuLateral></MenuLateral>
             <div className={`
             flex
@@ -23,6 +29,7 @@ export default function Layout(props: LayoutProps) {
             p-7
             bg-gray-300 dark:bg-gray-800
             `}>
+                <Botao texto={"Alternar Tema"} alternarTema={alternarTema}></Botao>
                 <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo}></Cabecalho>
                 <Conteudo>
                     {props.children}
