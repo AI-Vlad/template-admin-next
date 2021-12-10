@@ -29,7 +29,9 @@ export default function Layout(props: LayoutProps) {
             p-7
             bg-gray-300 dark:bg-gray-800
             `}>
-                <Botao texto={"Alternar Tema"} alternarTema={alternarTema}></Botao>
+                <div className={`flex justify-center`}>
+                    <Botao texto={"Alternar Tema"} alternarTema={alternarTema}></Botao>
+                </div>
                 <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo}></Cabecalho>
                 <Conteudo>
                     {props.children}
