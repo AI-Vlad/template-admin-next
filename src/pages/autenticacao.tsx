@@ -22,7 +22,7 @@ export default function Autenticacao(props) {
 
         <div className={`flex h-screen items-center justify-center`}>
             <div className="md:w-1/2 hidden md:block shadow-2xl shadow-indigo-500/50">
-                 <img className="h-screen w-full object-cover" src={HorizonLogo.src} alt="imagem da tela de autenticação" /> 
+                 <img className="h-screen w-full object-fill" src={HorizonLogo.src} alt="imagem da tela de autenticação" /> 
                 {/* <Image src="/logo-horizon.jpeg"  alt="Picture of the author" layout='fill' className={'image'}></Image> */}
             </div>
             <div className="md:w-1/2 w-full m-10">
