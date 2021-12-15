@@ -3,6 +3,7 @@ import Botao from "./Botao";
 import Cabecalho from "./Cabecalho";
 import Conteudo from "./Conteudo";
 import MenuLateral from "./MenuLateral";
+import SwitchButton from "./SwitchButton"
 
 interface LayoutProps {
     titulo: string
@@ -29,8 +30,8 @@ export default function Layout(props: LayoutProps) {
             p-7
             bg-gray-300 dark:bg-gray-800
             `}>
-                <div className={`flex justify-center`}>
-                    <Botao texto={"Alternar Tema"} alternarTema={alternarTema}></Botao>
+                <div className={`flex justify-end`}>
+                    <Botao texto={tema} alternarTema={alternarTema}></Botao>
                 </div>
                 <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo}></Cabecalho>
                 <Conteudo>

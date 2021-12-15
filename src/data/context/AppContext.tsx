@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-type Tema = 'dark' | ''
+type Tema = 'dark' | 'light'
 
 interface AppContextProps {
     tema?: Tema
@@ -8,16 +8,23 @@ interface AppContextProps {
 }
 
 const AppContext = createContext<AppContextProps>({
-    tema: null,
+    tema: 'light',
     alternarTema: null
 })
 
 export function AppProvider(props) {
 
-    const [tema, setTema] = useState<Tema>('')
+    const [tema, setTema] = useState<Tema>('light')
 
     function alternarTema() {
-        setTema(tema === "" ? 'dark' : '')
+        const temaDefinido = () => {
+            if (tema === "dark") {
+                return 'light'
+            }else{
+                return 'dark'
+            }
+        }
+        setTema(temaDefinido)
         console.log('ativando funçaõ')
         console.log(tema)
     }
