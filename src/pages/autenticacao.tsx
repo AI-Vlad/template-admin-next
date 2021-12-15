@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AuthInput from "../components/auth/AuthInput";
-import Image from 'next/image'
+import HorizonLogo from '../../public/logo-horizon.jpeg'
 
 export default function Autenticacao(props) {
 
@@ -22,9 +22,8 @@ export default function Autenticacao(props) {
 
         <div className={`flex h-screen items-center justify-center`}>
             <div className="md:w-1/2 hidden md:block shadow-2xl shadow-indigo-500/50">
-                {/* <img className="h-screen w-full object-cover" src="https://source.unsplash.com/random" alt="imagem da tela de autenticação" /> */}
-                <Image className="h-screen w-full object-cover relative" src="/logo-horizon.jpeg"  alt="Picture of the author" layout='responsive' width={500}
-            height={515}></Image>
+                 <img className="h-screen w-full object-cover" src={HorizonLogo.src} alt="imagem da tela de autenticação" /> 
+                {/* <Image src="/logo-horizon.jpeg"  alt="Picture of the author" layout='fill' className={'image'}></Image> */}
             </div>
             <div className="md:w-1/2 w-full m-10">
                 <h1 className={`
