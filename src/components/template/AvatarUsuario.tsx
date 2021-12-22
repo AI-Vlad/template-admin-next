@@ -4,12 +4,12 @@ import useAuth from "../../data/context/hook/useAuth";
 
 interface AvatarUsuarioProps{
     className?: string
+    imagemUrl?: string
 }
 
 export default function AvatarUsuario(props: AvatarUsuarioProps) {
-    const {imagemUrl} = useAuth().usuario ? useAuth().usuario : ""
-
-    console.log(imagemUrl)
+    const {usuario} = useAuth() 
+    console.log(usuario)
 
     return(
         <Link href='/perfil'>
@@ -20,7 +20,7 @@ export default function AvatarUsuario(props: AvatarUsuarioProps) {
             cursor-pointer
             ml-2
             ${props.className}
-            `} src={imagemUrl ?? ""} alt="Avatar do Usuário" />
+            `} src={usuario.imagemUrl ?? ""} alt="Avatar do Usuário" />
         </Link>
     )
 }
