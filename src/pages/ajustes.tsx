@@ -4,7 +4,7 @@ export default function Ajustes() {
   return (
     <Layout titulo = "Ajustes" 
     subtitulo = "Aqui você irá gerenciar os seus ajustes">
-      <h3>Conteúdo</h3>
+      <h3>Conteúdo do Layout</h3>
     </Layout>
   )
 }
