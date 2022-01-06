@@ -1,9 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 type Tema = 'dark' | 'light'
 
 interface AppContextProps {
-    tema?: Tema
+    tema?: string
     alternarTema?: () => void
 }
 
@@ -14,19 +14,36 @@ const AppContext = createContext<AppContextProps>({
 
 export function AppProvider(props) {
 
-    const [tema, setTema] = useState<Tema>('light')
+    
+    const [tema, setTema] = useState('light')
+    const [temaAtual, setTemaAtual] = useState('light')
+    
+
+   
+
+    useEffect(() => {
+        const temaObserver = localStorage.getItem('tema')  
+        setTema(temaObserver)
+        }
+    , [])
 
     function alternarTema() {
+      
+
         const temaDefinido = () => {
             if (tema === "dark") {
+                setTemaAtual('dark')
                 return 'light'
             }else{
+                setTemaAtual('light')
                 return 'dark'
             }
         }
+        
         setTema(temaDefinido)
+        localStorage.setItem('tema', temaAtual)
         console.log('ativando funçaõ')
-        console.log(tema)
+        
     }
 
     return (
